@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+  background-color: black;
+}
+
+.main:before {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.main:after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  filter: invert(1);
+}
+
+.gradient {
+  height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.125;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  padding: 20px;
+  color: white;
+}
+
+.navbar {
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  color: white;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.navbar .burger-icon {
+  background: rgba(173, 216, 230, 0.055);
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(173, 216, 230, 0.01);
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.navbar .burger-icon:hover {
+  background: rgba(173, 216, 230, 0.1);
+  scale: 1.05;
+}
+
+section {
+  padding: 10px;
+}
+
+/* Profile Section */
+.hero {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 500px;
+  position: relative;
+}
+
+.hero__profile {
+  width: 70% !important;
+}
+
+.hero__profile p {
+  color: gray;
+}
+
+.profile__name {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 10px 0;
+  text-shadow: -1px 1px 0 #fff,
+  1px 1px 0 #fff,
+ 1px -1px 0 #fff,
+-1px -1px 0 #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: black;
+}
+
+.profile__description span {
+  font-weight: 700;
+  color: rgb(202, 201, 201);
+}
+
+.hero__image {
+  position: absolute;
+  top: -30px;
+  right: -220px;
+}
+
+.hero__image img {
+  height: 500px;
+}
+
+/* Skill Section */
+
+.projects__title {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 10px 0;
+  text-shadow: -1px 1px 0 #fff,
+  1px 1px 0 #fff,
+ 1px -1px 0 #fff,
+-1px -1px 0 #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: black;
+}
+
+.project__cards {
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  padding: 30px 10px;
+}
+
+.project__card {
+  width: 260px;
+  background-color: rgba(173, 216, 230, 0.025);
+  border: 1px solid rgba(173, 216, 230, 0.1);
+  border-radius: 40px;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.project__card:hover {
+  background:rgba(173, 216, 230, 0.055);
+  scale: 1.05;
+}
+
+.project__img {
+  width: 200px;
+  height: 200px;
+  object-fit:cover;
+  border-radius: 20px;
+}
+
+
+.project__name {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.project__links {
+  text-align: center;
+}
+
+.project__link {
+  font-size: 1.1rem;
+  color: gray;
+  text-decoration: none;
+  padding: 0px 10px;
+  transition: ease-in-out 0.1s;
+}
+
+.project__link:first-child {
+  padding-right: 15px;
+  border-right: 1px solid gray;
+}
+
+.project__link:hover {
+  color: whitesmoke;
+  font-size: 1.12rem;
+}
